@@ -20,6 +20,7 @@
 #define NUM  1
 #define SYM  2
 #define ADJ  3
+#define HYPER LS(LA(LC(LEFT_META)))
 
 &mt {
   quick-tap-ms = <100>;
@@ -79,19 +80,19 @@ label= "BASE"                              ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃     Y     ┃     U     ┃     I     ┃     O     ┃     P     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   ⇧ | A   ┃   ⌥ | S   ┃   ^ | D   ┃  SYM | F  ┃     G     ┃   ┃     H     ┃  SYM | J  ┃   ^ | K   ┃   ⌥ | L   ┃   ⇧ | ;   ┃
+//             ┃   ⇧ | A   ┃     S     ┃   ^ | D   ┃  SYM | F  ┃     G     ┃   ┃     H     ┃  SYM | J  ┃   ^ | K   ┃     L     ┃   ⇧ | ;   ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃  ` | ~    ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     '     ┃
+// ┃   ` | ~   ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     '     ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃    HOME   ┃   ⌘ | ⇥   ┃  NUM | ⏎  ┃   ┃  NUM | _  ┃  ⌘ | ESC  ┃   ⟡ | END ┃
+//                                     ┃     ⌥     ┃   ⌘ | ⇥   ┃  NUM | ⏎  ┃   ┃  NUM | _  ┃  ⌘ | ESC  ┃   HYPER   ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷             ╷            ╷           ╷           ╷           ╷           ╷
 
                 &kp Q       &kp W       &kp E       &kp R        &kp T          &kp Y         &kp U        &kp I       &kp O       &kp P
-                &mt LSHFT A &mt LALT S  &mt LCTRL D &lt SYM F    &kp G          &kp H         &lt SYM J    &mt RCTRL K &mt RALT L  &mt RSHFT SEMI
+                &mt LSHFT A &kp S       &mt LCTRL D &lt SYM F    &kp G          &kp H         &lt SYM J    &mt RCTRL K &mt RALT L  &mt RSHFT SEMI
     &kp GRAVE   &kp Z       &kp X       &kp C       &kp V        &kp B          &kp N         &kp M        &kp COMMA   &kp DOT     &kp FSLH    &kp SQT
-                               &kp LS(LA(LC(LCMD))) &mt LCMD TAB &lt NAV RET    &lt NAV SPACE &mt RCMD ESC &kp RS(RA(RC(RCMD)))
+                                        &kp LALT    &mt LCMD TAB &lt NUM RET    &lt NUM SPACE &mt RCMD ESC &kp HYPER
                         >;
                 };
 
